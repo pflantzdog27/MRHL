@@ -1,0 +1,68 @@
+<div ng-controller="teamsController">
+    <div class="row">
+        <div class="col-md-6">
+            Select the away team
+            <select class="form-control" data-ng-model="awayTeam" data-ng-options="team as team.name for team in teams">
+            </select>
+        </div>
+        <div class="col-md-6">
+            Select the home team
+            <select class="form-control" data-ng-model="homeTeam" data-ng-options="team as team.name for team in teams">
+            </select>
+        </div>
+    </div>
+    <a class="btn btn-block btn-primary" data-ng-click="rosters = !rosters">View Matchup</a>
+
+    <div data-ng-show="rosters">
+        <div class="row">
+            <p class="alert-danger alert">Put this into a lightbox</p>
+            <div id="away-team-roster" class="col-md-6">
+                <h2>{{awayTeam.name}}</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                        <th>Games Played</th>
+                    </tr>
+                    </thead>
+                    <tbody data-ng-repeat="player in players">
+                    <tr data-ng-if="player.team == awayTeam.name">
+                        <td >{{player.jersey}}</td>
+                        <td >{{player.name}}</td>
+                        <td >{{player.goals}}</td>
+                        <td >{{player.assists}}</td>
+                        <td >{{player.gamesPlayed}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="home-team-roster" class="col-md-6">
+                <h2>{{homeTeam.name}}</h2>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Goals</th>
+                        <th>Assists</th>
+                        <th>Games Played</th>
+                    </tr>
+                    </thead>
+                    <tbody data-ng-repeat="player in players">
+                    <tr data-ng-if="player.team == homeTeam.name">
+                        <td >{{player.jersey}}</td>
+                        <td >{{player.name}}</td>
+                        <td >{{player.goals}}</td>
+                        <td >{{player.assists}}</td>
+                        <td >{{player.gamesPlayed}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a class="btn btn-block btn-primary" href="#/matchup">Start Game</a>
+    </div>
+</div>

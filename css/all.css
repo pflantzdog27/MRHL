@@ -1,0 +1,46 @@
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
+/***  Box Shadows  ***/
+/***  Transitions  ***/
+/***  Scale  ***/
+/***  Radius  ***/
+body {
+  overflow-x: hidden; }
+
+.slide-container {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .slide-container .slide {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+  .slide-container .ng-enter, .slide-container .ng-leave {
+    -o-transition: all 1500ms ease;
+    -ms-transition: all 1500ms ease;
+    -moz-transition: all 1500ms ease;
+    -webkit-transition: all 1500ms ease;
+    transition: all 1500ms ease; }
+  .slide-container .ng-enter {
+    left: 100%; }
+  .slide-container .ng-enter-active {
+    left: 0; }
+  .slide-container .slide.ng-leave-active {
+    left: -200%; }
+
+#curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+  overflow: hidden; }
+
+@media (min-width: 768px) {
+  /* small */ }
+@media (min-width: 992px) {
+  /* medium */ }
+@media (min-width: 1200px) {
+  /* large */ }
