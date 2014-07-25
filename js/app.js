@@ -2,6 +2,7 @@
 angular.module('mrhlApp', [
   'mrhlApp.controllers',
   'mrhlApp.services',
-  'mrhlApp.router'
+  'mrhlApp.router',
+  'ui.bootstrap'
 ]);
 
