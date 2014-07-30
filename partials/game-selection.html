@@ -14,9 +14,23 @@
     <button class="btn btn-primary btn-block" ng-click="open('lg')">View Matchup</button>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-body row">
-            <div id="away-team-roster" class="col-md-6">
-                <h2>{{awayTeam.name}}</h2>
+            <div id="away-team" class="col-md-12">
+                <header>
+                    <h2>{{awayTeam.name}}</h2>
+                    <h4>Team Stats</h4>
+                    <dl class="team-stats-row clearfix">
+                        <dt>Points:</dt>
+                            <dd>{{awayTeam.point}} |</dd>
+                        <dt>Wins:</dt>
+                            <dd>{{awayTeam.win}} |</dd>
+                        <dt>Losses:</dt>
+                            <dd>{{awayTeam.loss}} |</dd>
+                        <dt>Draws:</dt>
+                            <dd>{{awayTeam.draw}}</dd>
+                    </dl>
+                </header>
                 <table class="table table-striped">
+                    <h4>Player Stats</h4>
                     <thead>
                         <tr>
                             <th>#</th>
@@ -37,9 +51,24 @@
                     </tbody>
                 </table>
             </div>
-            <div id="home-team-roster" class="col-md-6">
-                <h2>{{homeTeam.name}}</h2>
+            <hr>
+            <div id="home-team" class="col-md-12">
+                <header>
+                    <h2>{{homeTeam.name}}</h2>
+                    <h4>Team Stats</h4>
+                    <dl class="team-stats-row clearfix">
+                        <dt>Points:</dt>
+                        <dd>{{homeTeam.point}} |</dd>
+                        <dt>Wins:</dt>
+                        <dd>{{homeTeam.win}} |</dd>
+                        <dt>Losses:</dt>
+                        <dd>{{homeTeam.loss}} |</dd>
+                        <dt>Draws:</dt>
+                        <dd>{{homeTeam.draw}}</dd>
+                    </dl>
+                </header>
                 <table class="table table-striped">
+                    <h4>Player Stats</h4>
                     <thead>
                     <tr>
                         <th>#</th>
@@ -62,8 +91,8 @@
             </div>
         </div>
         <div class="modal-footer">
-            <button class="btn btn-primary" ng-click="ok()">Start the Matchup!</button>
-            <button class="btn btn-warning" ng-click="cancel()">Cancel/Close</button>
+            <button class="btn btn-primary" data-ng-click="ok()">Start the Matchup!</button>
+            <button class="btn btn-warning" data-ng-click="cancel()">Cancel/Close</button>
         </div>
     </script>
 

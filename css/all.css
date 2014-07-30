@@ -29,14 +29,15 @@ body {
   .slide-container .slide.ng-leave-active {
     left: -200%; }
 
-#curtain {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.75);
-  width: 100%;
-  height: 100%;
-  overflow: hidden; }
+.team-stats-row dt {
+  float: left;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+.team-stats-row dd {
+  margin: 0 5px;
+  float: left; }
 
 @media (min-width: 768px) {
   /* small */ }

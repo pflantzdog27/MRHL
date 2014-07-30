@@ -6,7 +6,11 @@ angular.module('mrhlApp.services',[])
             $.each(data.posts, function(i, team) {
                 mrhlTeamsAPI.push({
                     name: team.custom_fields.team_name[0],
-                    tier: team.custom_fields.team_tier[0]
+                    tier: team.custom_fields.team_tier[0],
+                    win : team.custom_fields.team_win[0],
+                    loss : team.custom_fields.team_loss[0],
+                    draw : team.custom_fields.team_draw[0],
+                    point : team.custom_fields.team_point[0]
                 })
             });
         });
